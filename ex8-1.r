@@ -24,7 +24,7 @@ mean(females) -> m2
 abs(qt(0.025, df=N1+N1)) -> t
 
 #Finally calculating the margin of erroR
-mt <- (s1/N1 + s2/N2) * t
+mt <- (s1/sqrt(N1) + s2/sqrt(N2)) * t
 
 ##Therefore the confidence interval is the following
 lowerbound <- (m1-m2) - mt
