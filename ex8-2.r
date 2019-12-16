@@ -1,6 +1,7 @@
 data <- read.csv("survey_data_2019.txt" , header=TRUE , sep='\t')
 data <- data[complete.cases(data[,"prob"]),]
-# We are going to use the variable X1bar - X2bar (x1bar avg value of males , x2bar avg value of females)
+# We are going to use the variable X1bar - X2bar (x1bar avg value of males 
+#, x2bar avg value of females)
 males <- data[data$sex == 'M',]$prob
 females <- data[data$sex == 'F',]$prob
 
@@ -36,3 +37,4 @@ t <-  ( m - 0 ) / s
 pval <- pt(df= N1+N2 , -abs(t))
 #pval is 0.1591045 so the null hypothesis is not rejected with
 #significance level 5%
+message("Pvalue = ", pval)

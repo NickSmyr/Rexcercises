@@ -1,6 +1,7 @@
 data <- read.csv("survey_data_2019.txt" , header=TRUE , sep='\t')
 data <- data[complete.cases(data[,"height"]),]
-# We are going to use the variable X1bar - X2bar (x1bar avg value of males , x2bar avg value of females)
+# We are going to use the variable X1bar - X2bar (x1bar avg value of males 
+#, x2bar avg value of females)
 males <- data[data$sex == 'M',]$height
 females <- data[data$sex == 'F',]$height
 
@@ -21,7 +22,7 @@ mean(females) -> m2
 
 #Calculating the t for 95 % confidence interval
 #Degrees of freedom are N1+N2 sp
-abs(qt(0.025, df=N1+N1)) -> t
+abs(qt(0.025, df=min(N1-1,N2-1))) -> t
 
 #Finally calculating the margin of erroR
 mt <- (s1/sqrt(N1) + s2/sqrt(N2)) * t
@@ -29,3 +30,4 @@ mt <- (s1/sqrt(N1) + s2/sqrt(N2)) * t
 ##Therefore the confidence interval is the following
 lowerbound <- (m1-m2) - mt
 higherbound <- (m1-m2) + mt
+message("95% Confidence interval is [ ", lowerbound , " , " , higherbound, " ]")
