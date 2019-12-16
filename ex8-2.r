@@ -35,6 +35,4 @@ t <-  ( m - 0 ) / s
 # P - value ( with t test using Student t probabiliy function )
 # and one sided significane test ( so input value is t)
 pval <- pt(df= N1+N2 , -abs(t))
-#pval is 0.1591045 so the null hypothesis is not rejected with
-#significance level 5%
 message("Pvalue = ", pval)

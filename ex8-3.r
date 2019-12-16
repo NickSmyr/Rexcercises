@@ -34,5 +34,4 @@ t <-  ( m - 0 ) / s
 # P - value ( with t test using Student t probabiliy function )
 # and two sided significance test 
 pval <- 2*pt(df= N - 1 , -abs(t))
-#pval is 1.311082e-07 os the null hypothesis is rejected
 message("Pvalue = ", pval)
