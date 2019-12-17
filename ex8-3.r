@@ -13,12 +13,12 @@ hist(prob)
 #Calculating sample size
 nrow(data) -> N
 
-#Calculating the sdeviastions of each data
-sd(math) -> s1
-sd(prob) -> s2
+#Calculating the variances of each data
+var(math) -> v1
+var(prob) -> v2
 
 #sample sd
-s <- s1/sqrt(N) + s2/sqrt(N)
+s <- sqrt(v1/N + v2/N)
 
 mean(math) -> m1
 mean(prob) -> m2

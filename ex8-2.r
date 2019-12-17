@@ -14,12 +14,12 @@ hist(females)
 nrow(data[data$sex == 'M',]) -> N1
 nrow(data[data$sex == 'F',]) -> N2
 
-#Calculating the sdeviastions of each male and female data
-sd(males) -> s1
-sd(females) -> s2
+#Calculating the variances of each male and female data
+var(males) -> v1
+var(females) -> v2
 
 #sample sd
-s <- s1/sqrt(N1) + s2/sqrt(N2)
+s <- sqrt(v1/N1 + v2/N2)
 
 mean(males) -> m1
 mean(females) -> m2
